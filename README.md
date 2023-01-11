@@ -5,4 +5,3 @@
     alt="Contribute with Gitpod"
   />
 </a>
-<button color = "red">https://github.com/GuruprasadKini/LamdaTestSampleJava.git</button>
