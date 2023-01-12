@@ -1,14 +1,9 @@
 tasks:
-- command: yarn start
-  label: Run development server
+- command: mvn clean test
+  label: Run Selenium tests
   group: Run
   depends_on: [workspace-start]
   when:
     event: workspace-start
-- command: chromium-browser --no-sandbox https://localhost:3000
-  label: Open browser
-  group: Run
-  depends_on: [workspace-start]
-  when:
-    event: workspace-start
+
 
