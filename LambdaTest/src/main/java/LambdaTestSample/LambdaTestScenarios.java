@@ -15,6 +15,13 @@ public class LambdaTestScenarios {
 		 static RemoteWebDriver driver = null;
 		 String gridURL = "@hub.lambdatest.com/wd/hub";
 		 boolean status = false;
+	
+		public static void main(String[] args) {
+			new LambdaTestScenarios().testScenario1();
+			new LambdaTestScenarios().testScenario2();
+			new LambdaTestScenarios().testScenario3();
+		}
+	
 		public void testScenario1() {
 			browserSetUp();
 			try {
@@ -91,11 +98,7 @@ public class LambdaTestScenarios {
 				tearDown();
 			}
 		}
-		public static void main(String[] args) {
-			new LambdaTestScenarios().testScenario1();
-			new LambdaTestScenarios().testScenario2();
-			new LambdaTestScenarios().testScenario3();
-		}
+		
 		public void browserSetUp(){
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability("browserName", "chrome");
@@ -116,6 +119,7 @@ public class LambdaTestScenarios {
 		    	System.out.println(e.getMessage());
 		    }
 		}
+	
 		private void tearDown() {
 			if (driver != null) {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
