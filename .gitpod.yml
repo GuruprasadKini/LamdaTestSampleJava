@@ -1,9 +1,14 @@
-# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: echo 'init script' # runs during prebuild
-    command: "/usr/bin/env /home/gitpod/.sdkman/candidates/java/11.0.17.fx-zulu/bin/java @/tmp/cp_45036b9d79fota19uurnaxh0u.argfile LambdaTestSample.LambdaTestScenarios"
+- command: yarn start
+  label: Run development server
+  group: Run
+  depends_on: [workspace-start]
+  when:
+    event: workspace-start
+- command: chromium-browser --no-sandbox https://localhost:3000
+  label: Open browser
+  group: Run
+  depends_on: [workspace-start]
+  when:
+    event: workspace-start
 
-# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
-ports:
-  - port: 3000
-    onOpen: open-preview
