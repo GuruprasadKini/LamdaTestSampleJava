@@ -1,7 +1,5 @@
 tasks:
 - command: mvn clean test
-  label: Run Selenium tests
-  group: Run
   ports:
   - port: 3000
     onOpen: open-preview
